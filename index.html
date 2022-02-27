@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script type="text/javascript" src="./dist/hx-vue-toast.bundle.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <button @click="toast">show</button>
+            <button @click="toast2">success</button>
+            <button @click="toast3">warning</button>
+            <button @click="toast4">error</button>
+            <button @click="toast5">loading</button>
+            <button @click="toast6">loading不消失</button>
+        </div>
+
+        <script>
+            new Vue({
+                el:"#app",
+                methods: {
+                    toast:function(){
+                        this.$toast.show("12312312")
+                    },
+                    toast2:function(){
+                        this.$toast.show("123123121231231212312312123123121231231212312312",{
+                            type:"success",
+                            duration: 3000,
+                            onClose:() => {
+                                console.log('onClose');
+                            }
+                        })
+                    },
+                    toast3:function(){
+                        this.$toast.show("123123121231231212312312123123121231231212312312",{
+                            type:"warning",
+                            duration: 3000
+                        })
+                    },
+                    toast4:function(){
+                        this.$toast.show("123123121231231212312312123123121231231212312312",{
+                            type:"error",
+                            duration: 3000
+                        })
+                    },
+                    toast5:function(){
+                        this.$toast.show("加载中...",{
+                            type:"loading",
+                            duration: 3000
+                        })
+                    },
+                    toast6:function(){
+                        this.$toast.show("加载中...",{
+                            type:"loading",
+                            duration: 0,
+                            onClose:() => {
+                                setTimeout(() => {
+                                    console.log('setTimeout')
+                                    this.$toast.hide('',{
+                                        type:'hide'
+                                    });
+                                },5000);
+                            }
+                        })
+                    }
+                    
+                },
+            })
+        </script>
+    </body>
+</html>

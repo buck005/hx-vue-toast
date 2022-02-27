@@ -1,42 +1,30 @@
 {
   "name": "hx-vue-toast",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "webpack-dev": "webpack -w"
   },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
-  },
+  "keywords": [
+    "hx-vue-toast"
+  ],
+  "author": "king",
+  "license": "ISC",
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.8",
-    "@vue/cli-plugin-eslint": "~4.5.8",
-    "@vue/cli-service": "~4.5.8",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.3.11"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  "@vue/compiler-sfc": "file:node_modules/vue/compiler-sfc",
+  "dependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.3.2",
+    "css-loader": "^3.6.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^2.0.0",
+    "vue-loader": "^14.2.2",
+    "vue-template-compiler": "^2.6.14"
+  }
 }
